@@ -1,0 +1,68 @@
+{
+  "default_theme_id": "sky-powder",
+  "themes": {
+    "sky-powder": {
+      "id": "sky-powder",
+      "name": "Небесным по пудре",
+      "description": "Пудровый фон и небесно-голубой акцент",
+      "colors": {
+        "background": "#F1B5B5",
+        "surface": "#FFFFFF",
+        "primary": "#87CEEB",
+        "primary_hover": "#6BB8E4",
+        "secondary": "#FFF0F5",
+        "accent": "#87CEEB",
+        "text_primary": "#1A1A2E",
+        "text_secondary": "#5C5C7A",
+        "text_on_primary": "#FFFFFF",
+        "border": "#E8D4DC",
+        "success": "#4CAF82",
+        "error": "#E57373",
+        "like": "#87CEEB",
+        "match": "#F78DA7"
+      }
+    },
+    "flamingo-powder": {
+      "id": "flamingo-powder",
+      "name": "Flamingo & Powder",
+      "description": "Flamingo Pink акцент на Powder Pink фоне",
+      "colors": {
+        "background": "#E8A8A8",
+        "surface": "#FFFFFF",
+        "primary": "#F78DA7",
+        "primary_hover": "#E57693",
+        "secondary": "#F1B5B5",
+        "accent": "#F78DA7",
+        "text_primary": "#3D2028",
+        "text_secondary": "#6B4049",
+        "text_on_primary": "#FFFFFF",
+        "border": "#E8A8A8",
+        "success": "#4CAF82",
+        "error": "#D84343",
+        "like": "#F78DA7",
+        "match": "#F78DA7"
+      }
+    },
+    "pink-yl": {
+      "id": "pink-yl",
+      "name": "PinkYl",
+      "description": "Тёплый градиент от солнечного жёлтого к глубокому розовому",
+      "colors": {
+        "background": "#F0A898",
+        "surface": "#FFFFFF",
+        "primary": "#FF6B9D",
+        "primary_hover": "#DE4F7F",
+        "secondary": "#FFE8D6",
+        "accent": "#FF7B89",
+        "text_primary": "#4A2038",
+        "text_secondary": "#7A4A5C",
+        "text_on_primary": "#FFFFFF",
+        "border": "#F5C4B8",
+        "success": "#4CAF82",
+        "error": "#D84343",
+        "like": "#FF7B89",
+        "match": "#DE4F7F"
+      }
+    }
+  }
+}
