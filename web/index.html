@@ -57,12 +57,30 @@
           <h2 class="screen-title">Добро пожаловать</h2>
           <p class="muted center">Укажите пол и возраст, чтобы смотреть анкеты</p>
           <form id="form-guest" class="form">
-            <label class="field"><span>Пол</span>
-              <select name="gender" required><option value="male">Мужской</option><option value="female">Женский</option></select>
-            </label>
-            <label class="field"><span>Возраст</span>
-              <input type="number" name="age" min="18" max="99" value="25" required />
-            </label>
+            <div class="field">
+              <span>Пол</span>
+              <div class="segmented" role="radiogroup" aria-label="Пол">
+                <label class="segmented-option">
+                  <input type="radio" name="gender" value="male" checked required />
+                  <span>Мужской</span>
+                </label>
+                <label class="segmented-option">
+                  <input type="radio" name="gender" value="female" required />
+                  <span>Женский</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <span>Возраст</span>
+              <div class="number-stepper">
+                <button type="button" class="stepper-btn" data-stepper="minus" aria-label="Уменьшить возраст">−</button>
+                <div class="stepper-value">
+                  <input type="number" class="stepper-input" name="age" min="18" max="99" value="25" required inputmode="numeric" aria-label="Возраст" />
+                  <span class="stepper-suffix">лет</span>
+                </div>
+                <button type="button" class="stepper-btn" data-stepper="plus" aria-label="Увеличить возраст">+</button>
+              </div>
+            </div>
             <button type="submit" class="btn-primary full">Начать просмотр</button>
           </form>
           <p class="muted center small">Уже есть аккаунт? <button type="button" class="link-btn" id="btn-login-onboarding">Войти</button></p>

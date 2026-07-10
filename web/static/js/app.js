@@ -1045,10 +1045,29 @@ async function checkApi() {
   }
 }
 
+function initFormControls() {
+  document.querySelectorAll(".number-stepper").forEach((wrap) => {
+    const input = wrap.querySelector(".stepper-input");
+    if (!input) return;
+    const min = parseInt(input.min, 10) || 18;
+    const max = parseInt(input.max, 10) || 99;
+
+    wrap.querySelector('[data-stepper="minus"]')?.addEventListener("click", () => {
+      const value = parseInt(input.value, 10) || min;
+      if (value > min) input.value = String(value - 1);
+    });
+    wrap.querySelector('[data-stepper="plus"]')?.addEventListener("click", () => {
+      const value = parseInt(input.value, 10) || min;
+      if (value < max) input.value = String(value + 1);
+    });
+  });
+}
+
 function init() {
   loadStateFromStorage();
   updateAuthUI();
   bindAuthButtons();
+  initFormControls();
 
   document.getElementById("form-guest").addEventListener("submit", handleGuestSubmit);
   document.getElementById("form-login").addEventListener("submit", handleLogin);

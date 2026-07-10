@@ -77,14 +77,23 @@ a {
 }
 
 .btn-primary {
-  padding: 12px 20px;
+  padding: 15px 20px;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: 999px;
   background: var(--primary);
   color: var(--text-on-primary);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover, var(--primary));
+}
+
+.btn-primary:active {
+  transform: scale(0.985);
 }
 
 .btn-primary.full,
@@ -129,27 +138,213 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   margin-top: 16px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   font-size: 0.85rem;
 }
 
-.field input,
+.field > span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field input:not(.stepper-input),
 .field select,
 .field textarea {
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 14px;
   background: var(--surface);
   color: var(--text);
   font-size: 1rem;
   font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input:not(.stepper-input):hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: color-mix(in srgb, var(--border) 45%, var(--text) 10%);
+}
+
+.field input:not(.stepper-input):focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.field input:not(.stepper-input)::placeholder,
+.field textarea::placeholder {
+  color: color-mix(in srgb, var(--text-secondary) 70%, transparent);
+}
+
+.field input[type="number"]:not(.stepper-input) {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.field input[type="number"]:not(.stepper-input)::-webkit-inner-spin-button,
+.field input[type="number"]:not(.stepper-input)::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field select {
+  appearance: none;
+  padding-right: 44px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C5C7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.segmented {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: color-mix(in srgb, var(--screen) 35%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+  border-radius: 999px;
+}
+
+.segmented-option {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.segmented-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.segmented-option span {
+  display: block;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+
+.segmented-option input:checked + span {
+  background: var(--primary);
+  color: var(--text-on-primary);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.segmented-option input:focus-visible + span {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.number-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.number-stepper:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.stepper-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--screen) 50%, var(--surface));
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.stepper-btn:hover {
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  color: var(--primary);
+}
+
+.stepper-btn:active {
+  transform: scale(0.94);
+}
+
+.stepper-value {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.stepper-input {
+  width: 2.8ch;
+  min-width: 2ch;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  outline: none;
+  box-shadow: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.stepper-input:focus,
+.stepper-input:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.stepper-input::-webkit-inner-spin-button,
+.stepper-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper-suffix {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.2;
 }
 
 .field textarea {
