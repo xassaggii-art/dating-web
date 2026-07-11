@@ -61,7 +61,12 @@ def create_app() -> FastAPI:
     app.include_router(support.router, prefix=prefix)
 
     @app.get("/")
-    async def index() -> FileResponse:
+    async def landing() -> FileResponse:
+        return FileResponse(WEB_DIR / "landing.html")
+
+    @app.get("/demo")
+    async def app_demo() -> FileResponse:
+        """Внутренний прототип логики мобильного приложения (не для заказчика)."""
         return FileResponse(WEB_DIR / "index.html")
 
     app.mount("/static", StaticFiles(directory=WEB_DIR / "static"), name="static")
