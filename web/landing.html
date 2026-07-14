@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="VideoDating - брачное агентство нового формата. Видео-знакомства с проверенными анкетами. Скачайте приложение." />
-  <title>VideoDating - видео-знакомства с доверием</title>
+  <meta name="description" content="VideoDating - брачное агентство. Консультация, подбор пары, знакомства в приложении." />
+  <title>VideoDating - брачное агентство и консультации</title>
   <link rel="stylesheet" href="/static/css/landing.css" />
 </head>
 <body>
@@ -15,36 +15,93 @@
         <span class="logo-text">VideoDating</span>
       </a>
       <nav class="nav-desktop" aria-label="Основная навигация">
-        <a href="#how">Как работает</a>
-        <a href="#advantages">Преимущества</a>
+        <a href="#consultation">Консультация</a>
+        <a href="#path">Как мы работаем</a>
+        <a href="#vs-apps">Отличия</a>
+        <a href="#pains">Боли</a>
         <a href="#tariffs">Тарифы</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn-primary btn-sm header-cta" href="#download">Скачать app</a>
+      <a class="btn btn-primary btn-sm header-cta" href="#consultation">Запись</a>
       <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
   <nav class="nav-mobile" id="nav-mobile" hidden aria-label="Мобильное меню">
-    <a href="#how">Как работает</a>
-    <a href="#advantages">Преимущества</a>
+    <a href="#consultation">Консультация</a>
+    <a href="#path">Как мы работаем</a>
+    <a href="#vs-apps">Отличия</a>
+    <a href="#pains">Боли</a>
     <a href="#tariffs">Тарифы</a>
     <a href="#faq">FAQ</a>
     <a href="#download">Скачать приложение</a>
   </nav>
 
   <main>
-    <section class="hero" id="download">
+    <section class="hero" id="top-hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Брачное агентство + мобильное приложение</p>
-          <h1>Знакомьтесь по-настоящему - через живое видео, а не по фото из прошлого</h1>
+          <p class="eyebrow">Брачное агентство</p>
+          <h1>Консультация специалиста - и подбор пары под вас</h1>
           <p class="hero-lead">
-            VideoDating объединяет подход брачного агентства и современную видео-платформу:
-            проверенные анкеты, видео-визитки, безопасные свидания и честные отзывы после звонка.
+            Мы не приложение для бесконечного свайпа. Как брачное агентство: сначала личная
+            консультация, разбор целей и подбор кандидатов - и только потом ведём вас в приложение
+            для знакомства и видео-свиданий.
           </p>
-          <div class="store-buttons">
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" href="#consultation">Записаться на консультацию</a>
+            <a class="btn btn-outline btn-lg" href="#download">Уже прошли консультацию</a>
+          </div>
+          <p class="hero-note">Главная точка входа - консультация на сайте. Приложение - следующий шаг после разговора со специалистом.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="consultation-mockup" aria-hidden="true">
+            <div class="consultation-mock-header">
+              <span>Консультация агентства</span>
+              <span class="consultation-mock-time">45 мин</span>
+            </div>
+            <div class="consultation-mock-specialist">
+              <div class="consultation-mock-avatar">👤</div>
+              <div>
+                <strong>Специалист VideoDating</strong>
+                <span>Подбор пары · серьёзные отношения</span>
+              </div>
+            </div>
+            <ul class="consultation-mock-list">
+              <li>Цели: брак, отношения, темп знакомства</li>
+              <li>Ожидания от партнёра и ваш стиль общения</li>
+              <li>Рекомендации по первым шагам</li>
+              <li>План перехода в приложение</li>
+            </ul>
+            <div class="consultation-mock-flow">
+              <span>Консультация</span>
+              <span aria-hidden="true">→</span>
+              <span>Подбор</span>
+              <span aria-hidden="true">→</span>
+              <span>Приложение</span>
+            </div>
+          </div>
+          <div class="hero-badge">брачное агентство · личный подбор · конфиденциальность</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agency-strip">
+      <div class="container agency-strip-inner">
+        <p><strong>Не Tinder и не «свайп в пустоту».</strong> Сайт - это запись на консультацию брачного агентства. Приложение подключаем после разговора со специалистом.</p>
+        <a class="btn btn-primary btn-sm" href="#consultation">Записаться</a>
+      </div>
+    </section>
+
+    <section class="section section-download" id="download">
+      <div class="container download-strip">
+        <div>
+          <p class="eyebrow">Приложение</p>
+          <h2>Скачать - если уже прошли консультацию</h2>
+          <p class="section-lead">Новым пользователям - сначала консультация. Ссылки на сторы - для тех, кого специалист уже ведёт в app.</p>
+        </div>
+        <div class="store-buttons store-buttons--compact">
             <a class="store-btn" href="#" aria-label="Скачать в App Store">
               <span class="store-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M18.7 12.6c-.1-2.1 1.7-3.1 1.8-3.2-1-.1-2-.6-2.6-1.4-.6-.8-1-1.9-.9-3 1-.1 2 .5 2.5 1.3.5-.9 1.4-1.5 2.4-1.5.1 1-.3 2-.9 2.6-1.8 1.7-4.6 1.2-4.6 1.2.1 2.2 2 3.4 2 3.4-.8 2.3-2.5 2.3-3.1 2.3-.7 0-2.5-.4-3.3-2.2zM15.6 5.5c.5-.6 1.5-1 2.3-.9-.2 1.1-.9 2-1.9 2.4-.5.2-1 .2-1.4 0 .1-.5.6-1.2 1-1.5z"/></svg>
@@ -63,28 +120,232 @@
                 <strong>Google Play</strong>
               </span>
             </a>
-          </div>
-          <p class="hero-note">Сайт - рекламная витрина агентства. Все знакомства проходят в мобильном приложении.</p>
         </div>
-        <div class="hero-visual">
-          <div class="phone-mockup" aria-hidden="true">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="mock-video">
-                <div class="mock-play">▶</div>
-                <span>Видео-визитка</span>
-              </div>
-              <div class="mock-actions">
-                <button type="button" class="mock-skip">✕</button>
-                <button type="button" class="mock-like">♥</button>
-              </div>
-              <div class="mock-card">
-                <strong>Анна, 28</strong>
-                <span>Москва · совместимость 87%</span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-badge">конфиденциальность · модерация · рейтинг после звонка</div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="consultation">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Консультация</p>
+          <h2>Главная услуга - консультация брачного агентства</h2>
+          <p class="section-lead">Не с ленты и не со свайпа. Сначала разговор со специалистом, подбор пары - и только потом приложение.</p>
+        </div>
+        <div class="consultation-grid consultation-grid--three">
+          <article class="consultation-card">
+            <h3>Что на консультации</h3>
+            <ul>
+              <li>Разбор целей: серьёзные отношения, брак, знакомство без спешки</li>
+              <li>Ожидания от партнёра и ваш стиль общения</li>
+              <li>Рекомендации по формату знакомства и первым шагам</li>
+              <li>План: как перейти в приложение после консультации</li>
+            </ul>
+          </article>
+          <article class="consultation-card">
+            <h3>Чем мы не похожи на приложения</h3>
+            <ul>
+              <li>Живой специалист вместо безликого алгоритма</li>
+              <li>Подбор пары после разговора, а не случайная лента</li>
+              <li>Один путь: консультация → подбор → app - без хаоса свайпов</li>
+              <li>Фокус на серьёзных знакомствах, не на «лайках в пустоту»</li>
+            </ul>
+          </article>
+          <article class="consultation-card consultation-card-accent">
+            <h3>Записаться</h3>
+            <p>Оставьте контакт - специалист агентства свяжется с вами и назначит удобное время.</p>
+            <form class="consultation-form" action="#" method="post">
+              <label>
+                <span>Имя</span>
+                <input type="text" name="name" placeholder="Как к вам обращаться" />
+              </label>
+              <label>
+                <span>Телефон или email</span>
+                <input type="text" name="contact" placeholder="+7 … или email" />
+              </label>
+              <button type="submit" class="btn btn-primary btn-lg">Отправить заявку</button>
+            </form>
+            <p class="form-note">Макет формы. После согласования подключим CRM или мессенджер.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="path">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Воронка</p>
+          <h2>Консультация → подбор → приложение</h2>
+        </div>
+        <div class="steps steps--four">
+          <article class="step-card">
+            <div class="step-num">1</div>
+            <h3>Консультация</h3>
+            <p>Личный разговор со специалистом агентства: цели, ожидания, что важно в паре.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">2</div>
+            <h3>Подбор пары</h3>
+            <p>После консультации подбираем кандидатов по совместимости, интересам и целям.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">3</div>
+            <h3>Приложение</h3>
+            <p>Ведём в app: видео-визитка, лента, лайки, чаты с видео-кружками.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">4</div>
+            <h3>Видео-свидание</h3>
+            <p>Взаимный интерес → звонок в видеокомнате. Без лишних трат на пустые встречи.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vs-apps">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Почему не обычные приложения</p>
+          <h2>Боли Tinder, Мамбы и других - и наш ответ</h2>
+          <p class="section-lead">Из анализа рынка: что нравится в конкурентах и где они не закрывают потребность. VideoDating начинается с консультации агентства.</p>
+        </div>
+        <div class="vs-apps">
+          <article class="vs-app-card">
+            <header class="vs-app-header">
+              <h3>Tinder</h3>
+              <span class="vs-app-plus">+ большая аудитория</span>
+            </header>
+            <p class="vs-app-pain"><strong>Боль:</strong> женщины тонут в шаблонных сообщениях, мужчины - в конкуренции за внимание.</p>
+            <p class="vs-app-answer"><strong>У нас:</strong> консультация и подбор до ленты, лимит диалогов, осмысленные первые шаги.</p>
+          </article>
+          <article class="vs-app-card">
+            <header class="vs-app-header">
+              <h3>ВК Знакомства</h3>
+              <span class="vs-app-plus">+ экосистема ВК</span>
+            </header>
+            <p class="vs-app-pain"><strong>Боль:</strong> фейки, боты, пустые анкеты, баги и пропадающие диалоги.</p>
+            <p class="vs-app-answer"><strong>У нас:</strong> видеовизитка, модерация, живой специалист на старте.</p>
+          </article>
+          <article class="vs-app-card">
+            <header class="vs-app-header">
+              <h3>Мамба</h3>
+              <span class="vs-app-plus">+ много пользователей</span>
+            </header>
+            <p class="vs-app-pain"><strong>Боль:</strong> платная «иллюзия выбора», лайки от ботов, автопродление подписок.</p>
+            <p class="vs-app-answer"><strong>У нас:</strong> оплата за контакт и свидание, не за бесконечные лайки в пустоту.</p>
+          </article>
+          <article class="vs-app-card">
+            <header class="vs-app-header">
+              <h3>Pure</h3>
+              <span class="vs-app-plus">+ анонимность</span>
+            </header>
+            <p class="vs-app-pain"><strong>Боль:</strong> узкая ниша, неоднозначная аудитория, мало живых анкет в регионе.</p>
+            <p class="vs-app-answer"><strong>У нас:</strong> одна цель - серьёзные отношения, отсев на консультации.</p>
+          </article>
+          <article class="vs-app-card">
+            <header class="vs-app-header">
+              <h3>Twinby</h3>
+              <span class="vs-app-plus">+ тесты совместимости</span>
+            </header>
+            <p class="vs-app-pain"><strong>Боль:</strong> сырой продукт, лаги, примитивный ИИ, тесты не отражают реальность.</p>
+            <p class="vs-app-answer"><strong>У нас:</strong> совместимость через разговор со специалистом, не через формальные тесты.</p>
+          </article>
+          <article class="vs-app-card">
+            <header class="vs-app-header">
+              <h3>Дайвинчик (Leo)</h3>
+              <span class="vs-app-plus">+ бесплатно</span>
+            </header>
+            <p class="vs-app-pain"><strong>Боль:</strong> токсичное комьюнити, мошенники, «инвесторы», оскорбления.</p>
+            <p class="vs-app-answer"><strong>У нас:</strong> модерация, репутация, бан за агрессию, вход через консультацию.</p>
+          </article>
+        </div>
+        <p class="vs-apps-cta">Не уверены, с чего начать? <a href="#consultation">Запишитесь на консультацию</a> - специалист объяснит формат и подберёт план.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="pains">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Боли аудитории</p>
+          <h2>Что мешает знакомиться - и как мы это закрываем</h2>
+          <p class="section-lead">Две аудитории, одна логика: консультация агентства и приложение снимают типичные барьеры.</p>
+        </div>
+
+        <h3 class="pains-group-title">Для мужчин</h3>
+        <div class="pains">
+          <article class="pain-card">
+            <h3>Деньги на пустые свидания</h3>
+            <p class="pain-solution">Видеокомната до встречи, выбор формата и бюджета заранее - кофе вместо дорогого ужина.</p>
+            <p class="pain-quote">«Хватит тратить тысячи на пустые ужины. Найди ту, с кем кофе в парке станет лучшим свиданием».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Лайки без ответа</h3>
+            <p class="pain-solution">Лимит активных диалогов, подбор по интересам, не только по фото. Лайк - значит будет диалог.</p>
+            <p class="pain-quote">«Ты не один из сотни. Наш алгоритм даёт шанс каждому, кто ищет серьёзно».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Боты и мошенницы</h3>
+            <p class="pain-solution">Обязательная видеовизитка, модерация, рейтинги и жалобы. Блокировка подозрительных сценариев.</p>
+            <p class="pain-quote">«Никаких ботов и просьб “скинь на такси”. Только реальные люди с видеоанкетой».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Пустые анкеты</h3>
+            <p class="pain-solution">Минимум полей в профиле, подсказки при заполнении, бонусы за полную анкету.</p>
+            <p class="pain-quote">«Забудь про анкеты-пустышки. Здесь у каждого есть о чем рассказать».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Страшно написать первым</h3>
+            <p class="pain-solution">Подсказки для первого сообщения и комплимента по профилю - не «привет, как дела».</p>
+            <p class="pain-quote">«Старт диалога - больше не проблема. Умный чат подскажет, что написать».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Переписка без встречи</h3>
+            <p class="pain-solution">Лимит видео-кружков, кнопка «Предложить свидание», напоминание перевести общение в офлайн.</p>
+            <p class="pain-quote">«Хватит переписываться неделями. Нажми “Предложить свидание” и встреться уже завтра».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Подписка без результата</h3>
+            <p class="pain-solution">Оплата за реальный контакт и свидание, а не за бесконечные лайки в пустоту.</p>
+            <p class="pain-quote">«Платишь за лайки, а толку ноль? У нас - платишь только за реальный контакт».</p>
+          </article>
+        </div>
+
+        <h3 class="pains-group-title">Для женщин</h3>
+        <div class="pains">
+          <article class="pain-card">
+            <h3>Неподобающие сообщения</h3>
+            <p class="pain-solution">Фильтр спама, жалобы, санкции за пошлость и оскорбления. Чистое общение без «привет, крошка».</p>
+            <p class="pain-quote">«Забудь про “привет, крошка” и дикпики. У нас чистое общение без пошлости».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Страх за безопасность</h3>
+            <p class="pain-solution">Видеоверификация, первое свидание в публичном месте на карте, тревожная кнопка.</p>
+            <p class="pain-quote">«Твоя безопасность - наш приоритет. Первое свидание только в людном месте, которое выберешь ты».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Фото не совпадает с реальностью</h3>
+            <p class="pain-solution">Обязательная видеовизитка в анкете, жалобы на нечестные профили, блокировка или пометка.</p>
+            <p class="pain-quote">«Никакого “фото 10-летней давности” - только живое видео. Знакомься с настоящими людьми».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Лайк без ответа</h3>
+            <p class="pain-solution">Таймер ответа 24 часа, приоритет активным профилям, пометка «давно не в сети».</p>
+            <p class="pain-quote">«Хватит ждать ответа сутками. Здесь если мэтч - значит, ты интересна».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Банальные «привет, как дела»</h3>
+            <p class="pain-solution">Первое сообщение по интересам, фильтр на шаблоны, подсветка общих хобби.</p>
+            <p class="pain-quote">«Пиши осмысленно или не пиши вовсе. Мы отсеиваем “привет” и оставляем только тех, кому ты интересна».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Охотники за «разок»</h3>
+            <p class="pain-solution">Одна цель в сервисе - серьёзные отношения. Несовпадение целей - отсев на этапе подбора.</p>
+            <p class="pain-quote">«Ты ищешь отношения? Ты их найдёшь. А охотники за “разок” останутся за бортом».</p>
+          </article>
+          <article class="pain-card">
+            <h3>Токсичность и хамство</h3>
+            <p class="pain-solution">Модерация кружков, репутация и отзывы, мгновенный бан за агрессию после жалобы.</p>
+            <p class="pain-quote">«Хватит терпеть хамство. Здесь обидчики исчезают навсегда после первой жалобы».</p>
+          </article>
         </div>
       </div>
     </section>
@@ -92,24 +353,24 @@
     <section class="section" id="how">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Как это работает</p>
-          <h2>Три шага от первого взгляда до видео-свидания</h2>
+          <p class="eyebrow">В приложении</p>
+          <h2>После консультации - знакомство в app</h2>
         </div>
         <div class="steps">
           <article class="step-card">
             <div class="step-num">1</div>
-            <h3>Скачайте приложение</h3>
-            <p>Укажите пол и возраст - сразу смотрите анкеты. Без длинной регистрации на старте.</p>
+            <h3>Скачиваете приложение</h3>
+            <p>По рекомендации специалиста после консультации. Регистрация и видео-визитка.</p>
           </article>
           <article class="step-card">
             <div class="step-num">2</div>
-            <h3>Запишите видео-визитку</h3>
-            <p>60 секунд о себе, модерация агентства, глубокая анкета: цели, интересы, образование.</p>
+            <h3>Смотрите подобранные анкеты</h3>
+            <p>Лента с учётом целей с консультации: интересы, образование, совместимость.</p>
           </article>
           <article class="step-card">
             <div class="step-num">3</div>
             <h3>Лайк → мэтч → звонок</h3>
-            <p>Взаимная симпатия открывает чат с видео-кружками. Дальше - безопасное видео-свидание.</p>
+            <p>Чат с видео-кружками, затем видео-свидание в защищённой видеокомнате.</p>
           </article>
         </div>
       </div>
@@ -150,21 +411,21 @@
       <div class="container about-grid">
         <div>
           <p class="eyebrow">О сервисе</p>
-          <h2>Брачное агентство, которое говорит на языке видео</h2>
+          <h2>Брачное агентство с консультацией на входе</h2>
           <p>
-            Мы создаём пространство для серьёзных знакомств: без анонимных переписок
-            и бесконечного свайпа. Каждый профиль проходит проверку, а общение выходит
-            на уровень видео-кружков и звонков только после взаимного интереса.
+            VideoDating - это не очередное приложение для свайпа. Мы начинаем как брачное агентство:
+            личная консультация, подбор пары под ваши цели - и только потом знакомство в приложении
+            с видео-визитками, чатами и звонками.
           </p>
           <ul class="about-list">
-            <li>Гостевой доступ к ленте - 5 лайков до регистрации</li>
-            <li>Чаты только с видео-кружками до 60 секунд</li>
-            <li>Видео-свидания с прозрачной поминутной оплатой</li>
+            <li>Консультация специалиста - первая точка входа на сайте</li>
+            <li>Подбор кандидатов после разговора, не случайная лента</li>
+            <li>Приложение - инструмент знакомства после консультации</li>
           </ul>
         </div>
         <div class="stats-panel">
+          <div class="stat"><strong>1</strong><span>консультация - старт знакомства</span></div>
           <div class="stat"><strong>4</strong><span>критерия оценки после звонка</span></div>
-          <div class="stat"><strong>30</strong><span>лайков в сутки после регистрации</span></div>
           <div class="stat"><strong>24ч</strong><span>SLA модерации визитки</span></div>
         </div>
       </div>
@@ -177,6 +438,10 @@
           <h2>Истории тех, кто дошёл до видео-свидания</h2>
         </div>
         <div class="reviews">
+          <blockquote class="review-card">
+            <p>«Сначала была консультация - спокойно разобрали, кого я ищу. Потом вели в приложение, уже с понятным планом. Это ощущается как агентство, а не как Tinder.»</p>
+            <footer>Дмитрий, 36 · Москва</footer>
+          </blockquote>
           <blockquote class="review-card">
             <p>«Наконец сервис, где видно живого человека, а не отфотошопленный аватар. После видео-звонка было понятно - продолжаем общение.»</p>
             <footer>Мария, 31 · Москва</footer>
@@ -197,35 +462,35 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Тарифы</p>
-          <h2>Прозрачная модель: бесплатный старт, оплата за свидание</h2>
+          <h2>Прозрачная модель: консультация, приложение, свидание</h2>
         </div>
         <div class="pricing">
-          <article class="price-card">
-            <h3>Старт</h3>
-            <p class="price">0 ₽</p>
+          <article class="price-card price-card-featured">
+            <span class="price-badge">Старт</span>
+            <h3>Консультация</h3>
+            <p class="price">бесплатно / платно</p>
             <ul>
-              <li>Гостевой доступ к ленте</li>
-              <li>5 лайков до регистрации</li>
-              <li>Регистрация бесплатно</li>
+              <li>Разговор со специалистом агентства</li>
+              <li>Разбор целей и ожиданий</li>
+              <li>План перехода в приложение</li>
             </ul>
           </article>
-          <article class="price-card price-card-featured">
-            <span class="price-badge">Популярно</span>
+          <article class="price-card">
+            <h3>Приложение</h3>
+            <p class="price">0 ₽</p>
+            <ul>
+              <li>Регистрация после консультации</li>
+              <li>Лента и подбор анкет</li>
+              <li>Лайки и чаты</li>
+            </ul>
+          </article>
+          <article class="price-card">
             <h3>Видео-свидание</h3>
             <p class="price">от 400 ₽ / час</p>
             <ul>
               <li>Поминутная или пакетная оплата</li>
               <li>М / Ж: 75% / 25% по умолчанию</li>
               <li>Опция «оплачу полностью»</li>
-            </ul>
-          </article>
-          <article class="price-card">
-            <h3>Дополнительно</h3>
-            <p class="price">по запросу</p>
-            <ul>
-              <li>Запись свидания на 30 дней</li>
-              <li>Пакеты минут в личном кабинете</li>
-              <li>Подписка и баланс в приложении</li>
             </ul>
           </article>
         </div>
@@ -241,8 +506,20 @@
         </div>
         <div class="faq-list">
           <details class="faq-item" open>
+            <summary>С чего начать - с сайта или с приложения?</summary>
+            <p>С консультации на сайте. Мы как брачное агентство: сначала разговор и подбор, потом ведём вас в приложение для знакомства.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Чем вы отличаетесь от Tinder и других приложений?</summary>
+            <p>Обычные приложения начинаются со свайпа. Мы - с консультации брачного агентства: специалист разбирает цели, подбирает кандидатов и только потом ведёт в приложение. См. блок <a href="#vs-apps">«Отличия»</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Это брачное агентство или приложение?</summary>
+            <p>И то, и другое: агентство на входе (консультация и подбор), приложение - для знакомства после консультации.</p>
+          </details>
+          <details class="faq-item">
             <summary>Это сайт знакомств или приложение?</summary>
-            <p>Этот сайт - рекламная витрина брачного агентства VideoDating. Все знакомства, чаты и звонки проходят в мобильном приложении для iOS и Android.</p>
+            <p>Сайт - запись на консультацию и информация об агентстве. Знакомства, чаты и звонки - в мобильном приложении.</p>
           </details>
           <details class="faq-item">
             <summary>Можно ли общаться на сайте?</summary>
@@ -263,16 +540,19 @@
     <section class="cta-band">
       <div class="container cta-band-inner">
         <div>
-          <h2>Готовы к знакомству через видео?</h2>
-          <p>Скачайте приложение VideoDating - первый шаг займёт пару минут.</p>
+          <h2>Запишитесь на консультацию</h2>
+          <p>Или скачайте приложение, если уже прошли консультацию с нашим специалистом.</p>
         </div>
-        <div class="store-buttons store-buttons--light">
-          <a class="store-btn store-btn--light" href="#" aria-label="Скачать в App Store">
-            <span class="store-label"><small>App Store</small><strong>Скачать</strong></span>
-          </a>
-          <a class="store-btn store-btn--light" href="#" aria-label="Скачать в Google Play">
-            <span class="store-label"><small>Google Play</small><strong>Скачать</strong></span>
-          </a>
+        <div class="cta-band-actions">
+          <a class="btn btn-light btn-lg" href="#consultation">Консультация</a>
+          <div class="store-buttons store-buttons--light">
+            <a class="store-btn store-btn--light" href="#" aria-label="Скачать в App Store">
+              <span class="store-label"><small>App Store</small><strong>Скачать</strong></span>
+            </a>
+            <a class="store-btn store-btn--light" href="#" aria-label="Скачать в Google Play">
+              <span class="store-label"><small>Google Play</small><strong>Скачать</strong></span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -294,7 +574,7 @@
       <div class="footer-links">
         <h4>Контакты</h4>
         <a href="mailto:privacy@videodating.local">privacy@videodating.local</a>
-        <a href="#download">Скачать приложение</a>
+        <a href="#consultation">Запись на консультацию</a>
       </div>
     </div>
     <div class="container footer-bottom">
