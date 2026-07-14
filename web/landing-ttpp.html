@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- TTPP: снимок дизайна для отката. Открыть /landing-ttpp.html или заменить landing.html + landing.css на эти файлы. -->
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -8,20 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/landing.css" />
-  <script>
-    try {
-      if (localStorage.getItem("vd-landing-theme") === "black") {
-        document.documentElement.classList.add("theme-black");
-      }
-    } catch (error) {
-      /* ignore storage errors */
-    }
-  </script>
+  <link rel="stylesheet" href="/static/css/landing-ttpp.css" />
 </head>
 <body>
   <div class="intro-curtain" id="intro-curtain" aria-hidden="true"></div>
-  <div class="heart-scene" id="heart-scene" aria-hidden="true"></div>
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="logo" href="#top">
@@ -36,18 +26,6 @@
         <a href="#tariffs">Тарифы</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <button
-        type="button"
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Переключить на чёрную гамму"
-        aria-pressed="false"
-        title="Синий / Чёрный"
-      >
-        <span class="theme-toggle__swatch theme-toggle__swatch--blue" aria-hidden="true"></span>
-        <span class="theme-toggle__swatch theme-toggle__swatch--black" aria-hidden="true"></span>
-        <span class="theme-toggle__text">Гамма</span>
-      </button>
       <a class="btn btn-primary btn-sm header-cta" href="#consultation">Запись</a>
       <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -64,12 +42,12 @@
     <a href="#download">Скачать приложение</a>
   </nav>
 
-  <main id="site-main">
+  <main>
     <section class="hero" id="top-hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Брачное агентство</p>
-          <h1>Консультация специалиста и подбор пары под вас</h1>
+          <h1>Консультация специалиста&nbsp;- и подбор пары под вас</h1>
           <p class="hero-lead">
             Мы не приложение для бесконечного свайпа. Как брачное агентство: сначала личная
             консультация, разбор целей и подбор кандидатов - и только потом ведём вас в приложение
@@ -84,8 +62,8 @@
         <div class="hero-visual">
           <img
             class="hero-photo hero-photo-single"
-            src="/static/images/landing/hero-ttpp-v7.png"
-            alt="Символ заботы и подбора - путь к паре"
+            src="/static/images/landing/hero-couple-v6.jpg"
+            alt="Пара на прогулке - знакомство через агентство"
             width="800"
             height="1200"
             loading="eager"
@@ -112,19 +90,19 @@
         <div class="emotion-gallery reveal-on-scroll">
           <figure class="emotion-card">
             <div class="emotion-card-media">
-              <img src="/static/images/landing/emotion-consultation-ttpp-v8.png" alt="Консультация - личный разговор по телефону" width="1200" height="900" loading="lazy" />
+              <img src="/static/images/landing/emotion-consultation-v6.jpg" alt="Консультация - тёплый разговор со специалистом" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Консультация - сначала живой разговор</figcaption>
           </figure>
           <figure class="emotion-card">
-            <div class="emotion-card-media emotion-card-media--match">
-              <img src="/static/images/landing/emotion-match-ttpp-v9.png" alt="Подбор пары - взгляд друг на друга" width="1200" height="900" loading="lazy" />
+            <div class="emotion-card-media">
+              <img src="/static/images/landing/emotion-talk-v6.jpg" alt="Подбор пары - мужчина и женщина, взгляд друг на друга" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Подбор пары - по целям и химии</figcaption>
           </figure>
           <figure class="emotion-card">
             <div class="emotion-card-media">
-              <img src="/static/images/landing/emotion-date-ttpp-v7.png" alt="Свидание - близость и взаимность" width="1200" height="900" loading="lazy" />
+              <img src="/static/images/landing/emotion-date-v6.jpg" alt="Свидание - ужин при свечах, близость и тепло" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Свидание - когда уже есть взаимность</figcaption>
           </figure>
@@ -441,30 +419,22 @@
         </div>
         <div class="features">
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5l2-2h6l2 2"/><path d="M10 11.5v3l3-1.5-3-1.5z"/></svg>
-            </div>
+            <div class="feature-icon">🎬</div>
             <h3>Живое видео вместо «красивого фото»</h3>
             <p>Видео-визитки и рилсы помогают увидеть человека до первого слова.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z"/><path d="M9.5 12.5l2 2 4-4.5"/></svg>
-            </div>
+            <div class="feature-icon">🛡️</div>
             <h3>Модерация и безопасность</h3>
             <p>Гибридная проверка визиток, защита персональных данных, контакты только через приложение после мэтча.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 6.5h11a2 2 0 0 1 2 2V17l-3.5-2.5L10 17V8.5H4z"/><path d="M9 11.5h11a2 2 0 0 1 2 2V17"/><path d="M16.5 14.5h.01"/><path d="M19.5 14.5h.01"/></svg>
-            </div>
+            <div class="feature-icon">💬</div>
             <h3>Честные отзывы после звонка</h3>
             <p>4 критерия оценки и защита от накруток - репутация строится на реальных свиданиях.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
-            </div>
+            <div class="feature-icon">🎯</div>
             <h3>Подбор по совместимости</h3>
             <p>Фильтры по целям, интересам и образованию - меньше случайных знакомств.</p>
           </article>
@@ -492,8 +462,8 @@
           <div class="about-photo-wrap">
             <img
               class="about-photo"
-              src="/static/images/landing/about-service-ttpp-v7.png"
-              alt="О сервисе - связь и доверие"
+              src="/static/images/landing/about-couple-v6.jpg"
+              alt="Счастливая пара - тёплое знакомство"
               width="900"
               height="675"
               loading="lazy"
@@ -657,7 +627,7 @@
     </section>
   </main>
 
-  <footer class="site-footer" id="site-footer">
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
         <span class="logo-mark" aria-hidden="true">♥</span>
