@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="VideoDating - брачное агентство. Консультация, подбор пары, знакомства в приложении." />
   <title>VideoDating - брачное агентство и консультации</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="static/css/landing.css" />
+  <script>
+    try {
+      if (localStorage.getItem("vd-landing-theme") === "black") {
+        document.documentElement.classList.add("theme-black");
+      }
+    } catch (error) {
+      /* ignore storage errors */
+    }
+  </script>
 </head>
 <body>
+  <div class="intro-curtain" id="intro-curtain" aria-hidden="true"></div>
+  <div class="heart-scene" id="heart-scene" aria-hidden="true"></div>
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="logo" href="#top">
@@ -22,10 +36,24 @@
         <a href="#tariffs">Тарифы</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn-primary btn-sm header-cta" href="#consultation">Запись</a>
-      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Переключить на чёрную гамму"
+          aria-pressed="false"
+          title="Синий / Чёрный"
+        >
+          <span class="theme-toggle__swatch theme-toggle__swatch--blue" aria-hidden="true"></span>
+          <span class="theme-toggle__swatch theme-toggle__swatch--black" aria-hidden="true"></span>
+          <span class="theme-toggle__text">Гамма</span>
+        </button>
+        <a class="btn btn-primary btn-sm header-cta" href="#consultation">Запись</a>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
   <nav class="nav-mobile" id="nav-mobile" hidden aria-label="Мобильное меню">
@@ -38,19 +66,16 @@
     <a href="#download">Скачать приложение</a>
   </nav>
 
-  <main>
+  <main id="site-main">
     <section class="hero" id="top-hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Брачное агентство</p>
-          <h1>Консультация специалиста&nbsp;- и подбор пары под вас</h1>
+          <h1>Не ищите идеальную фотографию.<br>Найдите своего человека.</h1>
           <p class="hero-lead">
-            Мы не приложение для бесконечного свайпа. Как брачное агентство: сначала личная
-            консультация, разбор целей и подбор кандидатов - и только потом ведём вас в приложение
-            для знакомства и видео-свиданий.
+            Знакомства, в которых сначала слышат человека, а не анкеты.
           </p>
           <div class="hero-ctas">
-            <a class="btn btn-primary btn-lg" href="#consultation">Записаться на консультацию</a>
             <a class="btn btn-outline btn-lg" href="#download">Уже прошли консультацию</a>
           </div>
           <p class="hero-note">Главная точка входа - консультация на сайте. Приложение - следующий шаг после разговора со специалистом.</p>
@@ -58,10 +83,10 @@
         <div class="hero-visual">
           <img
             class="hero-photo hero-photo-single"
-            src="static/images/landing/hero-couple-v2.jpg"
-            alt="Пара на прогулке - знакомство через агентство"
-            width="900"
-            height="675"
+            src="static/images/landing/hero-ttpp-v7.png"
+            alt="Символ заботы и подбора - путь к паре"
+            width="800"
+            height="1200"
             loading="eager"
           />
           <div class="hero-badge">брачное агентство · личный подбор · конфиденциальность</div>
@@ -69,7 +94,7 @@
       </div>
     </section>
 
-    <section class="agency-strip">
+    <section class="agency-strip reveal-on-scroll">
       <div class="container agency-strip-inner">
         <p><strong>Не Tinder и не «свайп в пустоту».</strong> Сайт - это запись на консультацию брачного агентства. Приложение подключаем после разговора со специалистом.</p>
         <a class="btn btn-primary btn-sm" href="#consultation">Записаться</a>
@@ -78,27 +103,27 @@
 
     <section class="section section-emotions">
       <div class="container">
-        <div class="section-head section-head--center">
+        <div class="section-head section-head--center reveal-on-scroll">
           <p class="eyebrow">Живые эмоции</p>
           <h2>Люди, разговоры, свидания - не сухие карточки</h2>
           <p class="section-lead">Макет с фотографиями для согласования настроения. После утверждения подставим ваши или стоковые кадры.</p>
         </div>
-        <div class="emotion-gallery">
+        <div class="emotion-gallery reveal-on-scroll">
           <figure class="emotion-card">
             <div class="emotion-card-media">
-              <img src="static/images/landing/emotion-consultation-v2.jpg" alt="Консультация - живая беседа со специалистом" width="900" height="675" loading="lazy" />
+              <img src="static/images/landing/emotion-consultation-ttpp-v8.png" alt="Консультация - личный разговор по телефону" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Консультация - сначала живой разговор</figcaption>
           </figure>
           <figure class="emotion-card">
-            <div class="emotion-card-media">
-              <img src="static/images/landing/emotion-talk-v2.jpg" alt="Подбор пары - взгляд друг на друга" width="900" height="675" loading="lazy" />
+            <div class="emotion-card-media emotion-card-media--match">
+              <img src="static/images/landing/emotion-match-dance-ttpp-v1.png" alt="Подбор пары - танец и близость" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Подбор пары - по целям и химии</figcaption>
           </figure>
           <figure class="emotion-card">
             <div class="emotion-card-media">
-              <img src="static/images/landing/emotion-date-v2.jpg" alt="Свидание - пара держится за руки на закате" width="900" height="675" loading="lazy" />
+              <img src="static/images/landing/emotion-date-ttpp-v7.png" alt="Свидание - близость и взаимность" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Свидание - когда уже есть взаимность</figcaption>
           </figure>
@@ -116,7 +141,9 @@
         <div class="store-buttons store-buttons--compact">
             <a class="store-btn" href="#" aria-label="Скачать в App Store">
               <span class="store-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M18.7 12.6c-.1-2.1 1.7-3.1 1.8-3.2-1-.1-2-.6-2.6-1.4-.6-.8-1-1.9-.9-3 1-.1 2 .5 2.5 1.3.5-.9 1.4-1.5 2.4-1.5.1 1-.3 2-.9 2.6-1.8 1.7-4.6 1.2-4.6 1.2.1 2.2 2 3.4 2 3.4-.8 2.3-2.5 2.3-3.1 2.3-.7 0-2.5-.4-3.3-2.2zM15.6 5.5c.5-.6 1.5-1 2.3-.9-.2 1.1-.9 2-1.9 2.4-.5.2-1 .2-1.4 0 .1-.5.6-1.2 1-1.5z"/></svg>
+                <svg viewBox="0 0 384 512" width="28" height="28" fill="currentColor" focusable="false">
+                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.9 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.2 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                </svg>
               </span>
               <span class="store-label">
                 <small>Загрузите в</small>
@@ -125,7 +152,9 @@
             </a>
             <a class="store-btn" href="#" aria-label="Скачать в Google Play">
               <span class="store-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M3 20.5V3.5C3 2.9 3.5 2.4 4.1 2.4c.3 0 .6.1.9.3l12.8 7.5c.9.5.9 1.8 0 2.3L5 20.2c-.6.4-1.4.1-2-.7zm2-16.8v15.6l10.5-7.8L5 3.7zm13.2 7.1-2.8-1.6 2.8-1.6 2.1 1.2c.6.3.6 1.1 0 1.4l-2.1 1.2z"/></svg>
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M3 2v20a1 1 0 0 0 1.55.83L19 13.17a1 1 0 0 0 0-1.66L4.55 1.17A1 1 0 0 0 3 2z"/>
+                </svg>
               </span>
               <span class="store-label">
                 <small>Доступно в</small>
@@ -143,7 +172,7 @@
           <h2>Главная услуга - консультация брачного агентства</h2>
           <p class="section-lead">Не с ленты и не со свайпа. Сначала разговор со специалистом, подбор пары - и только потом приложение.</p>
         </div>
-        <div class="consultation-banner">
+        <div class="consultation-banner reveal-on-scroll">
           <img
             class="consultation-banner-photo"
             src="static/images/landing/about-warm.jpg"
@@ -199,7 +228,7 @@
 
     <section class="section" id="path">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal-on-scroll">
           <p class="eyebrow">Воронка</p>
           <h2>Консультация → подбор → приложение</h2>
         </div>
@@ -411,22 +440,30 @@
         </div>
         <div class="features">
           <article class="feature-card">
-            <div class="feature-icon">🎬</div>
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5l2-2h6l2 2"/><path d="M10 11.5v3l3-1.5-3-1.5z"/></svg>
+            </div>
             <h3>Живое видео вместо «красивого фото»</h3>
             <p>Видео-визитки и рилсы помогают увидеть человека до первого слова.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon">🛡️</div>
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z"/><path d="M9.5 12.5l2 2 4-4.5"/></svg>
+            </div>
             <h3>Модерация и безопасность</h3>
             <p>Гибридная проверка визиток, защита персональных данных, контакты только через приложение после мэтча.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon">💬</div>
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2.5l2.6 5.3 5.8.8-4.2 4.1 1 5.7L12 15.5l-5.2 2.9 1-5.7-4.2-4.1 5.8-.8L12 2.5z"/></svg>
+            </div>
             <h3>Честные отзывы после звонка</h3>
             <p>4 критерия оценки и защита от накруток - репутация строится на реальных свиданиях.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon">🎯</div>
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+            </div>
             <h3>Подбор по совместимости</h3>
             <p>Фильтры по целям, интересам и образованию - меньше случайных знакомств.</p>
           </article>
@@ -454,8 +491,8 @@
           <div class="about-photo-wrap">
             <img
               class="about-photo"
-              src="static/images/landing/about-couple.jpg"
-              alt="Счастливая пара - тёплое знакомство"
+              src="static/images/landing/about-service-ttpp-v7.png"
+              alt="О сервисе - связь и доверие"
               width="900"
               height="675"
               loading="lazy"
@@ -480,28 +517,28 @@
           <blockquote class="review-card">
             <p>«Сначала была консультация - спокойно разобрали, кого я ищу. Потом вели в приложение, уже с понятным планом. Это ощущается как агентство, а не как Tinder.»</p>
             <footer class="review-footer">
-              <img class="review-avatar" src="static/images/landing/avatar-dmitry.jpg" alt="" width="48" height="48" loading="lazy" />
+              <img class="review-avatar" src="static/images/landing/avatar-dmitry-v6.jpg" alt="" width="48" height="48" loading="lazy" />
               <span>Дмитрий, 36 · Москва</span>
             </footer>
           </blockquote>
           <blockquote class="review-card">
             <p>«Наконец сервис, где видно живого человека, а не отфотошопленный аватар. После видео-звонка было понятно - продолжаем общение.»</p>
             <footer class="review-footer">
-              <img class="review-avatar" src="static/images/landing/avatar-maria.jpg" alt="" width="48" height="48" loading="lazy" />
+              <img class="review-avatar" src="static/images/landing/avatar-maria-v6.jpg" alt="" width="48" height="48" loading="lazy" />
               <span>Мария, 31 · Москва</span>
             </footer>
           </blockquote>
           <blockquote class="review-card">
             <p>«Понравилась логика: сначала симпатия, потом кружки, потом звонок. Чувствуется подход агентства, а не случайного чата.»</p>
             <footer class="review-footer">
-              <img class="review-avatar" src="static/images/landing/avatar-alexey.jpg" alt="" width="48" height="48" loading="lazy" />
+              <img class="review-avatar" src="static/images/landing/avatar-alexey-v6.jpg" alt="" width="48" height="48" loading="lazy" />
               <span>Алексей, 34 · Санкт-Петербург</span>
             </footer>
           </blockquote>
           <blockquote class="review-card">
             <p>«Модерация визитки заняла меньше суток. Пока ждала - могла смотреть анкеты и лайкать, не теряя интерес.»</p>
             <footer class="review-footer">
-              <img class="review-avatar" src="static/images/landing/avatar-elena.jpg" alt="" width="48" height="48" loading="lazy" />
+              <img class="review-avatar" src="static/images/landing/avatar-elena-v6.jpg" alt="" width="48" height="48" loading="lazy" />
               <span>Елена, 27 · Казань</span>
             </footer>
           </blockquote>
@@ -517,7 +554,6 @@
         </div>
         <div class="pricing">
           <article class="price-card price-card-featured">
-            <span class="price-badge">Старт</span>
             <h3>Консультация</h3>
             <p class="price">бесплатно / платно</p>
             <ul>
@@ -588,7 +624,7 @@
       </div>
     </section>
 
-    <section class="cta-band">
+    <section class="cta-band reveal-on-scroll">
       <div class="container cta-band-inner">
         <div>
           <h2>Запишитесь на консультацию</h2>
@@ -598,9 +634,19 @@
           <a class="btn btn-light btn-lg" href="#consultation">Консультация</a>
           <div class="store-buttons store-buttons--light">
             <a class="store-btn store-btn--light" href="#" aria-label="Скачать в App Store">
+              <span class="store-icon" aria-hidden="true">
+                <svg viewBox="0 0 384 512" width="28" height="28" fill="currentColor" focusable="false">
+                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.9 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.2 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                </svg>
+              </span>
               <span class="store-label"><small>App Store</small><strong>Скачать</strong></span>
             </a>
             <a class="store-btn store-btn--light" href="#" aria-label="Скачать в Google Play">
+              <span class="store-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M3 2v20a1 1 0 0 0 1.55.83L19 13.17a1 1 0 0 0 0-1.66L4.55 1.17A1 1 0 0 0 3 2z"/>
+                </svg>
+              </span>
               <span class="store-label"><small>Google Play</small><strong>Скачать</strong></span>
             </a>
           </div>
@@ -609,7 +655,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" id="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
         <span class="logo-mark" aria-hidden="true">♥</span>

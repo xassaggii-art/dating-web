@@ -36,22 +36,24 @@
         <a href="#tariffs">Тарифы</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <button
-        type="button"
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Переключить на чёрную гамму"
-        aria-pressed="false"
-        title="Синий / Чёрный"
-      >
-        <span class="theme-toggle__swatch theme-toggle__swatch--blue" aria-hidden="true"></span>
-        <span class="theme-toggle__swatch theme-toggle__swatch--black" aria-hidden="true"></span>
-        <span class="theme-toggle__text">Гамма</span>
-      </button>
-      <a class="btn btn-primary btn-sm header-cta" href="#consultation">Запись</a>
-      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Переключить на чёрную гамму"
+          aria-pressed="false"
+          title="Синий / Чёрный"
+        >
+          <span class="theme-toggle__swatch theme-toggle__swatch--blue" aria-hidden="true"></span>
+          <span class="theme-toggle__swatch theme-toggle__swatch--black" aria-hidden="true"></span>
+          <span class="theme-toggle__text">Гамма</span>
+        </button>
+        <a class="btn btn-primary btn-sm header-cta" href="#consultation">Запись</a>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
   <nav class="nav-mobile" id="nav-mobile" hidden aria-label="Мобильное меню">
@@ -69,14 +71,11 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Брачное агентство</p>
-          <h1>Консультация специалиста и подбор пары под вас</h1>
+          <h1>Не ищите идеальную фотографию.<br>Найдите своего человека.</h1>
           <p class="hero-lead">
-            Мы не приложение для бесконечного свайпа. Как брачное агентство: сначала личная
-            консультация, разбор целей и подбор кандидатов - и только потом ведём вас в приложение
-            для знакомства и видео-свиданий.
+            Знакомства, в которых сначала слышат человека, а не анкеты.
           </p>
           <div class="hero-ctas">
-            <a class="btn btn-primary btn-lg" href="#consultation">Записаться на консультацию</a>
             <a class="btn btn-outline btn-lg" href="#download">Уже прошли консультацию</a>
           </div>
           <p class="hero-note">Главная точка входа - консультация на сайте. Приложение - следующий шаг после разговора со специалистом.</p>
@@ -118,7 +117,7 @@
           </figure>
           <figure class="emotion-card">
             <div class="emotion-card-media emotion-card-media--match">
-              <img src="/static/images/landing/emotion-match-ttpp-v9.png" alt="Подбор пары - взгляд друг на друга" width="1200" height="900" loading="lazy" />
+              <img src="/static/images/landing/emotion-match-dance-ttpp-v1.png" alt="Подбор пары - танец и близость" width="1200" height="900" loading="lazy" />
             </div>
             <figcaption>Подбор пары - по целям и химии</figcaption>
           </figure>
@@ -456,7 +455,7 @@
           </article>
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 6.5h11a2 2 0 0 1 2 2V17l-3.5-2.5L10 17V8.5H4z"/><path d="M9 11.5h11a2 2 0 0 1 2 2V17"/><path d="M16.5 14.5h.01"/><path d="M19.5 14.5h.01"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2.5l2.6 5.3 5.8.8-4.2 4.1 1 5.7L12 15.5l-5.2 2.9 1-5.7-4.2-4.1 5.8-.8L12 2.5z"/></svg>
             </div>
             <h3>Честные отзывы после звонка</h3>
             <p>4 критерия оценки и защита от накруток - репутация строится на реальных свиданиях.</p>
@@ -555,7 +554,6 @@
         </div>
         <div class="pricing">
           <article class="price-card price-card-featured">
-            <span class="price-badge">Старт</span>
             <h3>Консультация</h3>
             <p class="price">бесплатно / платно</p>
             <ul>

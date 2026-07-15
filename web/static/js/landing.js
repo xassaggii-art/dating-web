@@ -89,6 +89,7 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
+      closeMenu();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
