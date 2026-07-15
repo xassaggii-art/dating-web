@@ -422,7 +422,7 @@ h3 {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -441,6 +441,8 @@ h3 {
   gap: 10px;
   margin-left: auto;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
@@ -673,7 +675,8 @@ main,
   display: none;
   flex-direction: column;
   gap: 4px;
-  padding: 0 16px 16px;
+  width: 100%;
+  padding: 0 0 16px;
   background: var(--header-mobile-bg);
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 var(--radius) var(--radius);

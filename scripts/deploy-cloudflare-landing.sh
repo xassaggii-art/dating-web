@@ -16,3 +16,7 @@ echo "Deploying to Cloudflare Worker: super-tooth-39f3"
 $WRANGLER deploy
 
 echo "OK: https://super-tooth-39f3.xassaggii.workers.dev"
+echo ""
+echo "Note: Cloudflare workers.dev may be blocked or throttled for users in Russia."
+echo "Mirror for RU clients: https://xassaggii-art.github.io/dating-web/"
+echo "Enable in GitHub: Settings -> Pages -> Source: GitHub Actions"

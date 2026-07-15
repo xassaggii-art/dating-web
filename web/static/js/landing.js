@@ -66,7 +66,8 @@
   }
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (event) => {
+      event.stopPropagation();
       const open = toggle.getAttribute("aria-expanded") === "true";
       if (open) closeMenu();
       else openMenu();
@@ -76,7 +77,18 @@
       link.addEventListener("click", closeMenu);
     });
 
-    window.addEventListener("scroll", closeMenu, { passive: true });
+    let lastScrollY = window.scrollY;
+    window.addEventListener(
+      "scroll",
+      () => {
+        const currentScrollY = window.scrollY;
+        if (Math.abs(currentScrollY - lastScrollY) > 8) {
+          closeMenu();
+        }
+        lastScrollY = currentScrollY;
+      },
+      { passive: true }
+    );
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 720) closeMenu();
     });
