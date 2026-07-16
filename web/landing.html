@@ -2,13 +2,13 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="VideoDating - брачное агентство. Консультация, подбор пары, знакомства в приложении." />
   <title>VideoDating - брачное агентство и консультации</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/landing.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/landing.css?v=20260716ae" />
   <script>
     try {
       if (localStorage.getItem("vd-landing-theme") === "black") {
@@ -19,7 +19,7 @@
     }
   </script>
 </head>
-<body>
+<body lang="ru">
   <div class="intro-curtain" id="intro-curtain" aria-hidden="true"></div>
   <div class="heart-scene" id="heart-scene" aria-hidden="true"></div>
   <header class="site-header" id="top">
@@ -98,7 +98,7 @@
     <section class="agency-strip reveal-on-scroll">
       <div class="container agency-strip-inner">
         <p><strong>Не Tinder и не «свайп в пустоту».</strong> Сайт - это запись на консультацию брачного агентства. Приложение подключаем после разговора со специалистом.</p>
-        <a class="btn btn-primary btn-sm" href="#consultation">Записаться</a>
+        <a class="btn btn-dark-plaque btn-sm agency-strip__cta" href="#consultation">Записаться</a>
       </div>
     </section>
 
@@ -133,13 +133,13 @@
     </section>
 
     <section class="section section-download" id="download">
-      <div class="container download-strip">
-        <div>
+      <div class="container">
+        <div class="section-head section-head--center reveal-on-scroll">
           <p class="eyebrow">Приложение</p>
           <h2>Скачать - если уже прошли консультацию</h2>
           <p class="section-lead">Новым пользователям - сначала консультация. Ссылки на сторы - для тех, кого специалист уже ведёт в app.</p>
         </div>
-        <div class="store-buttons store-buttons--compact">
+        <div class="store-buttons store-buttons--compact store-buttons--centered reveal-on-scroll">
             <a class="store-btn" href="#" aria-label="Скачать в App Store">
               <span class="store-icon" aria-hidden="true">
                 <svg viewBox="0 0 384 512" width="28" height="28" fill="currentColor" focusable="false">
@@ -210,18 +210,27 @@
           <article class="consultation-card consultation-card-accent">
             <h3>Записаться</h3>
             <p>Оставьте контакт - специалист агентства свяжется с вами и назначит удобное время.</p>
-            <form class="consultation-form" action="#" method="post">
+            <form class="consultation-form" action="#" method="post" id="consultation-form">
               <label>
                 <span>Имя</span>
-                <input type="text" name="name" placeholder="Как к вам обращаться" />
+                <input type="text" name="name" placeholder="Как к вам обращаться" required />
               </label>
               <label>
                 <span>Телефон или email</span>
-                <input type="text" name="contact" placeholder="+7 … или email" />
+                <input type="text" name="contact" placeholder="+7 … или email" required />
+              </label>
+              <label class="consent-check">
+                <input type="checkbox" name="consent" value="1" required />
+                <span>
+                  Я принимаю
+                  <a href="#privacy" id="link-privacy">политику конфиденциальности</a>
+                  и
+                  <a href="#terms" id="link-terms">пользовательское соглашение</a>
+                </span>
               </label>
               <button type="submit" class="btn btn-primary btn-lg">Отправить заявку</button>
+              <p class="form-note">Конфиденциально. Свяжемся с вами в удобное время.</p>
             </form>
-            <p class="form-note">Конфиденциально. Свяжемся с вами в удобное время.</p>
           </article>
         </div>
       </div>
@@ -271,51 +280,87 @@
               <h3>Tinder</h3>
               <span class="vs-app-plus">+ большая аудитория</span>
             </header>
-            <p class="vs-app-pain"><strong>Боль:</strong> женщины тонут в шаблонных сообщениях, мужчины - в конкуренции за внимание.</p>
-            <p class="vs-app-answer"><strong>У нас:</strong> консультация и подбор до ленты, лимит диалогов, осмысленные первые шаги.</p>
+            <p class="vs-kv vs-kv--pain" lang="ru">
+              <span class="accent-caps">Боль:</span>
+              <span class="vs-kv__text">женщины тонут в шаблонных сообщениях, мужчины - в конкуренции за внимание.</span>
+            </p>
+            <p class="vs-kv vs-kv--answer" lang="ru">
+              <span class="accent-caps">У нас:</span>
+              <span class="vs-kv__text">консультация и подбор до ленты, лимит диалогов, осмысленные первые шаги.</span>
+            </p>
           </article>
           <article class="vs-app-card">
             <header class="vs-app-header">
               <h3>ВК Знакомства</h3>
               <span class="vs-app-plus">+ экосистема ВК</span>
             </header>
-            <p class="vs-app-pain"><strong>Боль:</strong> фейки, боты, пустые анкеты, баги и пропадающие диалоги.</p>
-            <p class="vs-app-answer"><strong>У нас:</strong> видеовизитка, модерация, живой специалист на старте.</p>
+            <p class="vs-kv vs-kv--pain" lang="ru">
+              <span class="accent-caps">Боль:</span>
+              <span class="vs-kv__text">фейки, боты, пустые анкеты, баги и пропадающие диалоги.</span>
+            </p>
+            <p class="vs-kv vs-kv--answer" lang="ru">
+              <span class="accent-caps">У нас:</span>
+              <span class="vs-kv__text">видеовизитка, модерация, живой специалист на старте.</span>
+            </p>
           </article>
           <article class="vs-app-card">
             <header class="vs-app-header">
               <h3>Мамба</h3>
               <span class="vs-app-plus">+ много пользователей</span>
             </header>
-            <p class="vs-app-pain"><strong>Боль:</strong> платная «иллюзия выбора», лайки от ботов, автопродление подписок.</p>
-            <p class="vs-app-answer"><strong>У нас:</strong> оплата за контакт и свидание, не за бесконечные лайки в пустоту.</p>
+            <p class="vs-kv vs-kv--pain" lang="ru">
+              <span class="accent-caps">Боль:</span>
+              <span class="vs-kv__text">платная «иллюзия выбора», лайки от ботов, автопродление подписок.</span>
+            </p>
+            <p class="vs-kv vs-kv--answer" lang="ru">
+              <span class="accent-caps">У нас:</span>
+              <span class="vs-kv__text">оплата за контакт и свидание, не за бесконечные лайки в пустоту.</span>
+            </p>
           </article>
           <article class="vs-app-card">
             <header class="vs-app-header">
               <h3>Pure</h3>
               <span class="vs-app-plus">+ анонимность</span>
             </header>
-            <p class="vs-app-pain"><strong>Боль:</strong> узкая ниша, неоднозначная аудитория, мало живых анкет в регионе.</p>
-            <p class="vs-app-answer"><strong>У нас:</strong> одна цель - серьёзные отношения, отсев на консультации.</p>
+            <p class="vs-kv vs-kv--pain" lang="ru">
+              <span class="accent-caps">Боль:</span>
+              <span class="vs-kv__text">узкая ниша, неоднозначная аудитория, мало живых анкет в регионе.</span>
+            </p>
+            <p class="vs-kv vs-kv--answer" lang="ru">
+              <span class="accent-caps">У нас:</span>
+              <span class="vs-kv__text">одна цель - серьёзные отношения, отсев на консультации.</span>
+            </p>
           </article>
           <article class="vs-app-card">
             <header class="vs-app-header">
               <h3>Twinby</h3>
               <span class="vs-app-plus">+ тесты совместимости</span>
             </header>
-            <p class="vs-app-pain"><strong>Боль:</strong> сырой продукт, лаги, примитивный ИИ, тесты не отражают реальность.</p>
-            <p class="vs-app-answer"><strong>У нас:</strong> совместимость через разговор со специалистом, не через формальные тесты.</p>
+            <p class="vs-kv vs-kv--pain" lang="ru">
+              <span class="accent-caps">Боль:</span>
+              <span class="vs-kv__text">сырой продукт, лаги, примитивный ИИ, тесты не отражают реальность.</span>
+            </p>
+            <p class="vs-kv vs-kv--answer" lang="ru">
+              <span class="accent-caps">У нас:</span>
+              <span class="vs-kv__text">совместимость через разговор со специалистом, не через формальные тесты.</span>
+            </p>
           </article>
           <article class="vs-app-card">
             <header class="vs-app-header">
               <h3>Дайвинчик (Leo)</h3>
               <span class="vs-app-plus">+ бесплатно</span>
             </header>
-            <p class="vs-app-pain"><strong>Боль:</strong> токсичное комьюнити, мошенники, «инвесторы», оскорбления.</p>
-            <p class="vs-app-answer"><strong>У нас:</strong> модерация, репутация, бан за агрессию, вход через консультацию.</p>
+            <p class="vs-kv vs-kv--pain" lang="ru">
+              <span class="accent-caps">Боль:</span>
+              <span class="vs-kv__text">токсичное комьюнити, мошенники, «инвесторы», оскорбления.</span>
+            </p>
+            <p class="vs-kv vs-kv--answer" lang="ru">
+              <span class="accent-caps">У нас:</span>
+              <span class="vs-kv__text">модерация, репутация, бан за агрессию, вход через консультацию.</span>
+            </p>
           </article>
         </div>
-        <p class="vs-apps-cta">Не уверены, с чего начать? <a href="#consultation">Запишитесь на консультацию</a> - специалист объяснит формат и подберёт план.</p>
+        <p class="vs-apps-cta" lang="ru">Не уверены, с чего начать? <a href="#consultation">Запишитесь на консультацию</a> - специалист объяснит формат и подберёт план.</p>
       </div>
     </section>
 
@@ -516,31 +561,31 @@
         </div>
         <div class="reviews">
           <blockquote class="review-card">
-            <p>«Сначала была консультация - спокойно разобрали, кого я ищу. Потом вели в приложение, уже с понятным планом. Это ощущается как агентство, а не как Tinder.»</p>
+            <p class="testimonial-text">«Сначала была консультация - спокойно разобрали, кого я ищу. Потом вели в приложение, уже с понятным планом. Это ощущается как агентство, а не как Tinder.»</p>
             <footer class="review-footer">
               <img class="review-avatar" src="/static/images/landing/avatar-dmitry-v7.jpg" alt="" width="48" height="48" loading="lazy" />
-              <span>Дмитрий, 36 · Москва</span>
+              <span class="review-meta">Дмитрий, 36 · Москва</span>
             </footer>
           </blockquote>
           <blockquote class="review-card">
-            <p>«Наконец сервис, где видно живого человека, а не отфотошопленный аватар. После видео-звонка было понятно - продолжаем общение.»</p>
+            <p class="testimonial-text">«Наконец сервис, где видно живого человека, а не отфотошопленный аватар. После видео-звонка было понятно - продолжаем общение.»</p>
             <footer class="review-footer">
               <img class="review-avatar" src="/static/images/landing/avatar-maria-v6.jpg" alt="" width="48" height="48" loading="lazy" />
-              <span>Мария, 31 · Москва</span>
+              <span class="review-meta">Мария, 31 · Москва</span>
             </footer>
           </blockquote>
           <blockquote class="review-card">
-            <p>«Понравилась логика: сначала симпатия, потом кружки, потом звонок. Чувствуется подход агентства, а не случайного чата.»</p>
+            <p class="testimonial-text">«Понравилась логика: сначала симпатия, потом кружки, потом звонок. Чувствуется подход агентства, а не случайного чата.»</p>
             <footer class="review-footer">
               <img class="review-avatar" src="/static/images/landing/avatar-alexey-v7.jpg" alt="" width="48" height="48" loading="lazy" />
-              <span>Алексей, 34 · Санкт-Петербург</span>
+              <span class="review-meta">Алексей, 34 · Санкт-Петербург</span>
             </footer>
           </blockquote>
           <blockquote class="review-card">
-            <p>«Модерация визитки заняла меньше суток. Пока ждала - могла смотреть анкеты и лайкать, не теряя интерес.»</p>
+            <p class="testimonial-text">«Модерация визитки заняла меньше суток. Пока ждала - могла смотреть анкеты и лайкать, не теряя интерес.»</p>
             <footer class="review-footer">
               <img class="review-avatar" src="/static/images/landing/avatar-elena-v6.jpg" alt="" width="48" height="48" loading="lazy" />
-              <span>Елена, 27 · Казань</span>
+              <span class="review-meta">Елена, 27 · Казань</span>
             </footer>
           </blockquote>
         </div>
@@ -632,7 +677,6 @@
           <p>Или скачайте приложение, если уже прошли консультацию с нашим специалистом.</p>
         </div>
         <div class="cta-band-actions">
-          <a class="btn btn-light btn-lg" href="#consultation">Консультация</a>
           <div class="store-buttons store-buttons--light">
             <a class="store-btn store-btn--light" href="#" aria-label="Скачать в App Store">
               <span class="store-icon" aria-hidden="true">
@@ -665,20 +709,29 @@
       </div>
       <div class="footer-links">
         <h4>Документы</h4>
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Пользовательское соглашение</a>
-        <a href="#">Публичная оферта</a>
+        <a href="#privacy" id="footer-privacy">Политика конфиденциальности</a>
+        <a href="#terms" id="footer-terms">Пользовательское соглашение</a>
+        <a href="#offer">Публичная оферта</a>
       </div>
       <div class="footer-links">
         <h4>Контакты</h4>
-        <a href="mailto:privacy@videodating.local">privacy@videodating.local</a>
-        <a href="#consultation">Запись на консультацию</a>
+        <a class="footer-email" href="mailto:privacy@videodating.local">privacy@videodating.local</a>
+        <a class="footer-cta" href="#consultation">Запись на консультацию</a>
       </div>
     </div>
     <div class="container footer-bottom">
       <p>© 2026 VideoDating</p>
     </div>
   </footer>
+
+  <button type="button" class="back-to-spot" id="back-to-spot" hidden aria-label="Вернуться назад по странице">
+    <span class="back-to-spot__icon" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="14" height="14" focusable="false">
+        <path d="M10.5 2.5 5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="back-to-spot__text">Вернуться</span>
+  </button>
 
   <script src="/static/js/landing.js"></script>
 </body>

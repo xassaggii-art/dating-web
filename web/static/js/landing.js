@@ -102,9 +102,138 @@
       if (!target) return;
       e.preventDefault();
       closeMenu();
+
+      const fromY = window.scrollY;
+      const toY = target.getBoundingClientRect().top + window.scrollY;
+      if (Math.abs(toY - fromY) > 120) {
+        rememberSpot(fromY);
+      }
+
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
+
+  const backBtn = document.getElementById("back-to-spot");
+  let savedScrollY = null;
+
+  function hideBackBtn() {
+    if (!backBtn) return;
+    backBtn.hidden = true;
+    savedScrollY = null;
+  }
+
+  function rememberSpot(y) {
+    if (!backBtn) return;
+    savedScrollY = Math.max(0, Math.round(y));
+    backBtn.hidden = false;
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener("click", () => {
+      if (savedScrollY === null) return;
+      const y = savedScrollY;
+      hideBackBtn();
+      window.scrollTo({ top: y, behavior: "smooth" });
+    });
+  }
+
+  const PREPOSITIONS = [
+    "между",
+    "перед",
+    "около",
+    "после",
+    "через",
+    "для",
+    "без",
+    "при",
+    "под",
+    "над",
+    "про",
+    "со",
+    "во",
+    "ко",
+    "об",
+    "от",
+    "по",
+    "из",
+    "за",
+    "до",
+    "не",
+    "ни",
+    "но",
+    "да",
+    "на",
+    "во",
+    "а",
+    "и",
+    "в",
+    "к",
+    "о",
+    "с",
+    "у",
+  ];
+  PREPOSITIONS.sort((a, b) => b.length - a.length);
+
+  const nbspPattern = new RegExp(
+    `(^|[^\\S\\u00A0\\wА-Яа-яЁё])(${PREPOSITIONS.join("|")})\\s+(?=[А-Яа-яЁёA-Za-z0-9«"(])`,
+    "giu"
+  );
+
+  const dashWordPattern = /(\s)-\s+(?=[А-Яа-яЁёA-Za-z0-9«"(])/g;
+
+  function fixHangingPrepositions(rootEl) {
+    if (!rootEl) return;
+    const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        const tag = parent.tagName;
+        if (tag === "SCRIPT" || tag === "STYLE" || tag === "TEXTAREA" || tag === "CODE" || tag === "PRE") {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (parent.closest(".footer-email")) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (!node.nodeValue || !/\s/.test(node.nodeValue)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      node.nodeValue = node.nodeValue
+        .replace(/\s+,/g, ",")
+        .replace(dashWordPattern, "\u00A0-\u00A0")
+        .replace(nbspPattern, "$1$2\u00A0");
+    });
+  }
+
+  const runTypographyFix = () => fixHangingPrepositions(document.body);
+
+  runTypographyFix();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(runTypographyFix).catch(() => {});
+  }
+  window.addEventListener("load", runTypographyFix, { once: true });
+
+  const consultationForm = document.getElementById("consultation-form");
+  if (consultationForm) {
+    consultationForm.addEventListener("submit", (event) => {
+      const consent = consultationForm.querySelector('input[name="consent"]');
+      if (consent && !consent.checked) {
+        event.preventDefault();
+        consent.focus();
+        consent.reportValidity();
+        return;
+      }
+      event.preventDefault();
+      window.alert("Заявка принята. Специалист свяжется с вами.");
+      consultationForm.reset();
+    });
+  }
 
   if (curtain && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     requestAnimationFrame(() => {
@@ -188,12 +317,17 @@
       };
     };
 
-    const getSheetHeight = () =>
-      Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-        window.innerHeight
-      ) + window.innerHeight * 0.55;
+    const getSheetHeight = () => {
+      const footer = document.getElementById("site-footer");
+      if (footer) {
+        return Math.max(footer.offsetTop + footer.offsetHeight, window.innerHeight);
+      }
+      const main = document.getElementById("site-main");
+      if (main) {
+        return Math.max(main.offsetTop + main.offsetHeight, window.innerHeight);
+      }
+      return window.innerHeight;
+    };
 
     const getHeartRadius = () => {
       const size = Math.min(window.innerWidth * 0.25, window.innerHeight * 0.21);
@@ -293,18 +427,19 @@
 
         placed.push({ x, y });
 
+        const clampedY = Math.min(Math.max(y, topPadding), sheetHeight - topPadding * 0.35);
         const scale = 0.88 + (row % 3) * 0.03 + rng() * 0.06;
         const opacity = 0.36 + (col % 2) * 0.03 + rng() * 0.04;
         const heart = hearts[index];
 
         heart.dataset.baseX = x.toFixed(2);
-        heart.dataset.baseY = String(y);
+        heart.dataset.baseY = String(clampedY);
         heart.dataset.baseScale = scale.toFixed(3);
         heart.dataset.baseOpacity = opacity.toFixed(2);
         heart.dataset.wobble = (rng() * Math.PI * 2).toFixed(3);
 
         heart.style.setProperty("--heart-x", `${x}%`);
-        heart.style.setProperty("--heart-y", `${y}px`);
+        heart.style.setProperty("--heart-y", `${clampedY}px`);
         heart.style.setProperty("--heart-scale", scale.toFixed(3));
         heart.style.setProperty("--heart-opacity", opacity.toFixed(2));
         heart.style.setProperty("--heart-lift", "0px");

@@ -948,6 +948,8 @@ a {
   color: var(--text-secondary);
   line-height: 1.35;
   min-height: 1.2em;
+  text-align: left;
+  text-wrap: pretty;
 }
 
 .card-bio:empty {
